@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BB.DigitalMirror.Business;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,36 +12,65 @@ namespace BB.DigitalMirror.API.Controllers
     [ApiController]
     public class ContractsController : ControllerBase
     {
-        // GET: api/Contracts
-        [HttpGet]
-        public IEnumerable<string> Get()
+        private readonly IContractRepository _contractRepository;
+
+        public ContractsController(IContractRepository contractRepository)
         {
-            return new string[] { "value1", "value2" };
+            _contractRepository = contractRepository ?? throw new ArgumentNullException(nameof(contractRepository));
+        }
+
+        // GET: api/Contracts
+        [HttpGet(Name = "Get")]
+        [ProducesResponseType(200, Type = typeof(List<Contract>))]
+        [ProducesResponseType(404)]
+        public async Task<ActionResult<IList<Contract>>> Get()
+        {
+            var response = await _contractRepository.GetContracts();
+            if (!response.Any())
+            {
+                return NotFound();
+            }
+            return response;
         }
 
         // GET: api/Contracts/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [ProducesResponseType(200, Type = typeof(Contract))]
+        [ProducesResponseType(404)]
+        public async Task<ActionResult<Contract>> Get(int id)
         {
-            return "value";
+            var response = await _contractRepository.GetContractById(id);
+            if (response == null)
+            {
+                return NotFound();
+            }
+            return response;
         }
 
         // POST: api/Contracts
         [HttpPost]
-        public void Post([FromBody] string value)
+        public async Task<ActionResult> Post([FromBody] ContractRequest request)
         {
-        }
+            if (request == null)
+            {
+                BadRequest();
+            }
 
-        // PUT: api/Contracts/5
+            await _contractRepository.CreateContract(request);
+             
+            return Created("api/Contracts", null);           
+        }
+         
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        public void Put()
         {
+            StatusCode(StatusCodes.Status405MethodNotAllowed);
         }
-
-        // DELETE: api/ApiWithActions/5
+         
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            StatusCode(StatusCodes.Status405MethodNotAllowed);
         }
     }
 }
