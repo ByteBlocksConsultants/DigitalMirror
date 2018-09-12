@@ -18,12 +18,11 @@ namespace BB.DigitalMirror.API.Controllers
         {
             _contractRepository = contractRepository ?? throw new ArgumentNullException(nameof(contractRepository));
         }
-
-        // GET: api/Contracts
+         
         [HttpGet(Name = "Get")]
-        [ProducesResponseType(200, Type = typeof(List<Contract>))]
+        [ProducesResponseType(200, Type = typeof(List<ContractModel>))]
         [ProducesResponseType(404)]
-        public async Task<ActionResult<IList<Contract>>> Get()
+        public async Task<ActionResult<IList<ContractModel>>> Get()
         {
             var response = await _contractRepository.GetContracts();
             if (!response.Any())
@@ -32,12 +31,11 @@ namespace BB.DigitalMirror.API.Controllers
             }
             return response;
         }
-
-        // GET: api/Contracts/5
+         
         [HttpGet("{id}", Name = "Get")]
-        [ProducesResponseType(200, Type = typeof(Contract))]
+        [ProducesResponseType(200, Type = typeof(ContractModel))]
         [ProducesResponseType(404)]
-        public async Task<ActionResult<Contract>> Get(int id)
+        public async Task<ActionResult<ContractModel>> Get(int id)
         {
             var response = await _contractRepository.GetContractById(id);
             if (response == null)
@@ -46,8 +44,7 @@ namespace BB.DigitalMirror.API.Controllers
             }
             return response;
         }
-
-        // POST: api/Contracts
+         
         [HttpPost]
         public async Task<ActionResult> Post([FromBody] ContractRequest request)
         {
