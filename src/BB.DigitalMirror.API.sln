@@ -16,7 +16,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D56E4B1D-E78B-45D3-B6DA-15241A73B320}"
 	ProjectSection(SolutionItems) = preProject
 		..\.dockerignore = ..\.dockerignore
-		README.md = README.md
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blockchain Providers", "Blockchain Providers", "{B6BC7D44-DB18-4BCF-88D6-E7D61BAEB577}"

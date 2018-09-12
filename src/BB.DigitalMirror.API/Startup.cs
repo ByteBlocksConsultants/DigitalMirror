@@ -34,7 +34,7 @@ namespace BB.DigitalMirror.API
 
             services.AddEntityFrameworkNpgsql()
                 .AddDbContext<DigitalMirrorContext>(options =>
-                options.UseNpgsql(Configuration.GetConnectionString("configstring")));
+                options.UseNpgsql(Configuration.GetConnectionString("DigitalMirrorDb")));
        
 
             // Register the Swagger generator, defining 1 or more Swagger documents

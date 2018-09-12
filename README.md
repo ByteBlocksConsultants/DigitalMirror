@@ -19,3 +19,9 @@ The API is hosted on Azure
 
 
 
+Databaswe
+1. Initial Migration
+Look through custom context and find the DbSets, create database and tables
+	dotnet ef migrations add InitialMigration
+Apply Migration
+	dotnet ef database update
