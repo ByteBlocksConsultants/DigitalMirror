@@ -17,11 +17,11 @@ The API is hosted on Azure
 	2. Introduce Docker
 	3. Use Domain Drive Design best practices to decompose the monolithic API into microservices on Azure
 
-
-
-Databaswe
-1. Initial Migration
-Look through custom context and find the DbSets, create database and tables
-	dotnet ef migrations add InitialMigration
-Apply Migration
-	dotnet ef database update
+	 
+Database
+	1. Initial Migration
+		
+	Look through custom context and find the DbSets, create database and tables
+		```dotnet ef migrations add InitialMigration```
+	2. Apply Migration
+		```dotnet ef database update```
