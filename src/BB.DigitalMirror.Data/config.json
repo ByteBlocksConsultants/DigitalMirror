@@ -1,0 +1,5 @@
+{
+  "DigitalMirrorDb": {
+    "ConnectionString": "User Id =dbadmin;Password=dbadmin;Server=localhost;Port=5432;Database=DigitalMirror_Dev;Integrated Security=true; Pooling=true;"
+  }
+}

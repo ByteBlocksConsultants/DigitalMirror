@@ -1,6 +1,6 @@
 ﻿namespace BB.DigitalMirror.Business
 {
-    public class Contract
+    public class ContractModel
     {
     }
 }
