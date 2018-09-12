@@ -23,6 +23,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Blockchain Providers", "Blo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{A74A0A14-5891-4F27-A9B6-AB4242862B3F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BB.DigitalMirror.Tests", "BB.DigitalMirror.Tests\BB.DigitalMirror.Tests.csproj", "{DC4E011E-CAC6-4459-846C-217394660577}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,10 @@ Global
 		{CF3D1CDA-DB05-4EF5-B6CD-B812B8F359C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF3D1CDA-DB05-4EF5-B6CD-B812B8F359C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF3D1CDA-DB05-4EF5-B6CD-B812B8F359C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC4E011E-CAC6-4459-846C-217394660577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC4E011E-CAC6-4459-846C-217394660577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC4E011E-CAC6-4459-846C-217394660577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC4E011E-CAC6-4459-846C-217394660577}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -60,6 +66,7 @@ Global
 		{19542C92-6B71-4E4D-ACE8-5737ECA18A81} = {B6BC7D44-DB18-4BCF-88D6-E7D61BAEB577}
 		{CF3D1CDA-DB05-4EF5-B6CD-B812B8F359C5} = {A74A0A14-5891-4F27-A9B6-AB4242862B3F}
 		{B6BC7D44-DB18-4BCF-88D6-E7D61BAEB577} = {A74A0A14-5891-4F27-A9B6-AB4242862B3F}
+		{DC4E011E-CAC6-4459-846C-217394660577} = {A74A0A14-5891-4F27-A9B6-AB4242862B3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C994151F-3F26-4563-9881-96FD763D913C}
